@@ -1,0 +1,22 @@
+type Mutation {
+    addGame(id: ID!, name: String!, developerId: ID!): Game!
+    updateGame(id: ID!, name: String!, developerId: ID!): Game!
+    deleteGame(id: ID!): Game!
+}
+
+type Query {
+    gameById(id: ID!): Game
+    gameByName(name: String!): Game
+    allGames: [Game!]!
+}
+
+type Game {
+    id: ID!
+    name: String!
+    developer: Developer!
+}
+
+type Developer {
+    id: ID!
+    name: String!
+}
