@@ -293,6 +293,58 @@ O objetivo deste projeto é desenvolver uma API GraphQL simples usando o framewo
   - `@MutationMapping` é uma anotação composta que atua como um atalho para o tipo `Mutation`, que representa as operações de escrita da API. Por exemplo, o método `addGame` recebe três argumentos: `id`, `name` e `developerId`, e retorna um novo objeto `Game` criado com esses valores. O método `updateGame` faz o mesmo, mas atualiza um objeto `Game` existente. O método `deleteGame` recebe um argumento `id` e retorna o objeto `Game` excluído com esse `id`.
   - `@SchemaMapping` mapeia um método manipulador para um campo no esquema GraphQL e o declara como o `DataFetcher` para esse campo. Por exemplo, o método `Developer` mapeia o campo `developer` do tipo `Game` para o método de manipulador, que recebe um objeto `Game` como fonte e retorna um objeto `Developer` associado a ele. O tipo `Developer` é outro tipo definido no esquema GraphQL, que representa o desenvolvedor de um jogo.
   - `@Argument` vincula um argumento GraphQL nomeado a um parâmetro de método. Por exemplo, o método `gameById` usa a anotação `@Argument` para vincular o argumento `id` do campo `gameById` do tipo `Query` ao parâmetro `id` do método. A anotação `@Argument` pode ser omitida se o nome do argumento e o nome do parâmetro forem iguais.
+  
+  #### 3.4. Habilitando o GraphiQL Playground
+  - GraphiQL é uma interface visual útil para escrever e executar consultas e muito mais.
+  - Adicionando esta configuração ao arquivo `application.properties` para ativar o GraphiQL.
+
+    ```
+    spring.graphql.graphiql.enabled=true
+    ```
+    
+    ![editando-properties](https://github.com/Tomaz5556/GraphQLMiniProjetoWEB/blob/master/images-tutorial/editando-properties.png)
+
+  #### 3.5. Executando o Projeto
+  
+  - Executando o arquivo `ProjectGraphqlApplication.java` para iniciar a Aplicação Spring.
+
+  ![executar-projeto](https://github.com/Tomaz5556/GraphQLMiniProjetoWEB/blob/master/images-tutorial/executar-projeto.png)
+
+  - Depois disso, acessando [http://localhost:8080/graphiql](http://localhost:8080/graphiql) no navegador.
+
+  <div id='resultados'/> 
+  
+  ### 4. Resultados Alcançados
+  
+  #### 4.1 Mutation
+
+  ##### 4.1.1 Adicionar um Jogo
+
+  ![add-game](https://github.com/Tomaz5556/GraphQLMiniProjetoWEB/blob/master/images-tutorial/add-game.png)
+  
+  ##### 4.1.2 Atualizar um Jogo
+
+  ![update-game](https://github.com/Tomaz5556/GraphQLMiniProjetoWEB/blob/master/images-tutorial/update-game.png)
+  
+  ##### 4.1.3 Excluir um Jogo
+
+  ![delete-game](https://github.com/Tomaz5556/GraphQLMiniProjetoWEB/blob/master/images-tutorial/delete-game.png)
+
+  #### 4.2 Query
+  
+  ##### 4.2.1 Buscar Jogo por ID
+
+  ![game-id](https://github.com/Tomaz5556/GraphQLMiniProjetoWEB/blob/master/images-tutorial/game-id.png)
+  
+  ##### 4.2.2 Buscar Jogo por Nome
+
+  ![game-name](https://github.com/Tomaz5556/GraphQLMiniProjetoWEB/blob/master/images-tutorial/game-name.png)
+  
+  ##### 4.2.3 Buscar Todos os Jogos
+
+  ![all-games](https://github.com/Tomaz5556/GraphQLMiniProjetoWEB/blob/master/images-tutorial/all-games.png)
+
+  <div id='licenca'/> 
 
   ### 5. Licença
   
